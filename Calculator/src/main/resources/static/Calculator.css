@@ -1,0 +1,64 @@
+@charset "UTF-8";
+
+table {
+	width:250px;
+    height: 300px;
+    padding: 0.5em 1em;
+    margin: 2em 0;
+    background: #FFF;
+    border: solid 3px #6091d3;/*線*/
+    border-radius: 10px;/*角の丸み*/
+    table-layout: fixed;
+    table-layout:auto;
+}
+
+.textbox{
+  width: 75%;
+  position: relative;
+  text-align: right;/* 文字列を右詰めに*/
+  margin: 10px 0px;
+  padding: 0.5em 1em;
+  border: solid;
+  border-radius: 5px;
+  font-size: 16px;
+  color: rgb(0, 0, 0);
+  outline: none;
+}
+
+.btn-ope-shadow {
+  width: 100%;
+  padding: 0.5em 1em;
+  text-decoration: none;
+  background: #87cefa;/*ボタン色*/
+  color: #000;
+  border-bottom: solid 4px #627295;
+  border-radius: 3px;
+    font-size: 16px;
+}
+
+.btn-ope-shadow:active {
+  /*ボタンを押したとき*/
+  -webkit-transform: translateY(4px);
+  transform: translateY(4px);/*下に動く*/
+  box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.2);/*影を小さく*/
+  border-bottom: none;
+}
+
+.btn-number-shadow {
+  width: 100%;
+  padding: 0.5em 1em;
+  text-decoration: none;
+  background: white;/*ボタン色*/
+  color: #000;
+  border-bottom: solid 4px #627295;
+  border-radius: 3px;
+    font-size: 16px;
+}
+
+.btn-number-shadow:active {
+/*  ボタンを押したとき*/
+  -webkit-transform: translateY(4px);
+  transform: translateY(4px);/*下に動く*/
+  box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.2);/*影を小さく*/
+  border-bottom: none;
+}
