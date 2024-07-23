@@ -1,41 +1,45 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="UTF-8">
 <title>電卓</title>
-<link rel="stylesheet"href="ファイル名"type="text/css">
+<link rel="stylesheet"href="Calculator.css"type="text/css">
+<script type="text/javascript"src="cal.js"></script>
 </head>
 <body>
-	<form>
+	<form name="calculator" action="/calc" method="post">
+		1つ目の値：<input type="text" name="firstNum" id="firstNum" value="" size=15 ><br />
+		演算子：<input type="text" name="operator" id="operator" value="" size=15><br />
+		フラグ：<input type="text" name="flag" id="flag" size=15><br />
 		<table>
 			
 			<tr>
-				<td colspan="3"><input type="text" class="textbox" /></td>
-				<td><input type="button" value="C" /></td>
+				<td colspan="3"><input type="text" class="textbox" id="display" name="secondNum" th:value="${dto.result}" /></td>
+				<td><input type="submit" value="C" class="btn-ope-shadow" name="C" onclick="opeClick(this)"/></td>
 			</tr>
 			<tr>
-				<td><input type="button" value="1" class="btn-number-shadow" /></td>
-				<td><input type="button" value="2" class="btn-number-shadow" /></td>
-				<td><input type="button" value="3" class="btn-number-shadow" /></td>
-				<td><input type="button" value="+" class="btn-ope-shadow" /></td>
+				<td><input type="button" value="1" class="btn-number-shadow" onclick="numClick(this)" /></td>
+				<td><input type="button" value="2" class="btn-number-shadow" onclick="numClick(this)" /></td>
+				<td><input type="button" value="3" class="btn-number-shadow" onclick="numClick(this)" /></td>
+				<td><input type="button" value="+" class="btn-ope-shadow" onclick="opeClick(this)" /></td>
 			</tr>
 			<tr>
-				<td><input type="button" value="4" class="btn-number-shadow" /></td>
-				<td><input type="button" value="5" class="btn-number-shadow" /></td>
-				<td><input type="button" value="6" class="btn-number-shadow" /></td>
-				<td><input type="button" value="-" class="btn-ope-shadow" /></td>
+				<td><input type="button" value="4" class="btn-number-shadow" onclick="numClick(this)" /></td>
+				<td><input type="button" value="5" class="btn-number-shadow" onclick="numClick(this)" /></td>
+				<td><input type="button" value="6" class="btn-number-shadow" onclick="numClick(this)" /></td>
+				<td><input type="button" value="-" class="btn-ope-shadow" onclick="opeClick(this)"/></td>
 			</tr>
 			<tr>
-				<td><input type="button" value="7" /></td>
-				<td><input type="button" value="8" /></td>
-				<td><input type="button" value="9" /></td>
-				<td><input type="button" value="*" /></td>	
+				<td><input type="button" value="7" class="btn-number-shadow" onclick="numClick(this)" /></td>
+				<td><input type="button" value="8" class="btn-number-shadow" onclick="numClick(this)" /></td>
+				<td><input type="button" value="9" class="btn-number-shadow" onclick="numClick(this)" /></td>
+				<td><input type="button" value="*" class="btn-ope-shadow " onclick="opeClick(this)"/></td>	
 			</tr>
 			<tr>
-				<td><input type="button" value="0" /></td>
+				<td><input type="button" value="0" class="btn-number-shadow" onclick="numClick(this)" /></td>
 				<td><type="button" value=" " /></td>
-				<td><input type="button" value="=" /></td>
-				<td><input type="button" value="/" /></td>
+				<td><input type="submit" value="=" class="btn-ope-shadow" /></td>
+				<td><input type="button" value="/" class="btn-ope-shadow" onclick="opeClick(this)"/></td>
 				
 			</tr>
 		</table>
